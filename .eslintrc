@@ -1,9 +1,5 @@
 {
-  "extends": [
-    "airbnb",
-    "react-app",
-    "prettier"
-  ],
+  "extends": ["airbnb", "react-app", "prettier"],
   "rules": {
     // Allow jsx tags inside .js files.
     "react/jsx-filename-extension": [1, {"extensions": [".js", ".jsx"]}],
@@ -29,23 +25,23 @@
     // No delete operator.
     "fp/no-delete": "warn",
     // Warning when Object.assign(a, b) used, since it mutates first argument. Object.assign({}, a, b) is ok.
-    "fp/no-mutating-assign": "warn",
+    // "fp/no-mutating-assign": "warn",
     // Warning when mutating method (pop, push, reverse, shift, sort, splice, unshift, etc) is used. Ramda and lodash/fp are allowed (_.pop, R.push)
     "fp/no-mutating-methods": [
       "warn",
       {
         "allowedObjects": ["_", "R"]
       }
-    ],
-    // Warning when mutating operators (++, --, etc) are used, object = {} also. `Component.propTypes`, `Component.defaultProps`, common.js (`module.exports`) and `ref.current` are ok.
-    "fp/no-mutation": [
-      "warn",
-      {
-        "commonjs": true,
-        "allowThis": true,
-        "exceptions": [{"property": "propTypes"}, {"property": "defaultProps"}, {"property": "current"}]
-      }
     ]
+    // Warning when mutating operators (++, --, etc) are used, object = {} also. `Component.propTypes`, `Component.defaultProps`, common.js (`module.exports`) and `ref.current` are ok.
+    // "fp/no-mutation": [
+    //   "warn",
+    //   {
+    //     "commonjs": true,
+    //     "allowThis": true,
+    //     "exceptions": [{"property": "propTypes"}, {"property": "defaultProps"}, {"property": "current"}]
+    //   }
+    // ]
   },
   "plugins": ["prettier", "fp"],
   "settings": {
@@ -57,9 +53,16 @@
   },
   "overrides": [
     {
-      "files": [ "./*.js"],
+      "files": ["./*.js"],
       "rules": {
-        "import/no-extraneous-dependencies": ["error", {"devDependencies": true, "optionalDependencies": false, "peerDependencies": false}],
+        "import/no-extraneous-dependencies": [
+          "error",
+          {
+            "devDependencies": true,
+            "optionalDependencies": false,
+            "peerDependencies": false
+          }
+        ],
         "global-require": 0
       }
     },
