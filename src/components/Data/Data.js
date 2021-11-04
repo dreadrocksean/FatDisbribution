@@ -252,8 +252,15 @@ const Data = () => {
     setStoreData(arr);
   };
 
-  // return <div>Hi</div>;
-  return <Spreadsheet data={storeData} onChange={handleChange} />;
+  return (
+    <div className={classes.root}>
+      <Spreadsheet
+        className={classes.Spreadsheet}
+        data={storeData}
+        onChange={handleChange}
+      />
+    </div>
+  );
 };
 
 export default Data;

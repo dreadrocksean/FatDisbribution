@@ -1,5 +1,10 @@
-.root {
+.Spreadsheet {
+  background: #acc5b5;
   position: inherit;
+}
+
+.root {
+  background: #ddd;
 }
 
 .button {
