@@ -84,8 +84,11 @@ const fatGroupCalc = parts => (thoseColumns, thisColumn) => {
 };
 
 const headerCalc = (storeData, col) => {
+  const array = [...Array(14)].map((_, i) => i + 26);
+  const losses = [9, 10, 15, 16, ...array];
   const val = storeData[0]?.[col]?.value;
-  return {res: val ?? '+'};
+  const str = losses.includes(col) ? '-' : '+';
+  return {res: val ?? str};
 };
 
 const extremitiesCalc = (thoseColumns, thisColumn) => {
