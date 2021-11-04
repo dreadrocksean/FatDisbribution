@@ -132,7 +132,7 @@ const colData = [
   {
     order: 1,
     key: 'bodyWeight',
-    name: 'Body Weight',
+    name: 'Body Weight lbs',
     init: leanMass,
     func: bodyWeightCalc,
   },
